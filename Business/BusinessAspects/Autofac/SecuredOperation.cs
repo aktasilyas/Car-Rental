@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Microsoft.Extensions.DependencyInjection;
 using Castle.DynamicProxy;
+using Microsoft.Extensions.DependencyInjection;
 using Core.Extensions;
 using Business.Constants;
 
@@ -14,7 +14,7 @@ namespace Business.BusinessAspects.Autofac
     public class SecuredOperation : MethodInterception
     {
         private string[] _roles;
-        private IHttpContextAccessor _httpContextAccessor;
+        private IHttpContextAccessor _httpContextAccessor; //Her istek için http oluşur
 
         public SecuredOperation(string roles)
         {
@@ -33,7 +33,7 @@ namespace Business.BusinessAspects.Autofac
                     return;
                 }
             }
-           throw new Exception(Messages.AuthorizationDenied);
+            throw new Exception(Messages.AuthorizationDenied);
         }
     }
 }

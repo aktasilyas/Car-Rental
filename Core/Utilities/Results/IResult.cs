@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Utilities
+namespace Core.Utilities.Results
 {
-   public interface IResult
+    public interface IResult
     {
         bool Success { get; }
         string Message { get; }
