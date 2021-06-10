@@ -74,7 +74,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        /*
+        
         [HttpGet("getcardetails")]
         public IActionResult GetCarDetails()
         {
@@ -84,6 +84,6 @@ namespace WebAPI.Controllers
                 return Ok(result);
             }
             return BadRequest(result);
-        }*/
+        }
     }
 }

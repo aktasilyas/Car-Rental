@@ -8,6 +8,7 @@ using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,10 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        [SecuredOperation("car.add")]
-        [ValidationAspect(typeof(CarValidator))]
-        [CacheRemoveAspect("IProductService.Get")]
-        [CacheAspect]
+        //[SecuredOperation("car.add")]
+       // [ValidationAspect(typeof(CarValidator))]
+       // [CacheRemoveAspect("IProductService.Get")]
+      //  [CacheAspect]//burayi kontrol et 
         public IResult Add(Car car)
         {
             BusinessRules.Run(CheckCarNameIsSame(car.CarName));
@@ -66,11 +67,11 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        /*
+        
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.CarListed);
-        }*/
+        }
 
     }
 }
