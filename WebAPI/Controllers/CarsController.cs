@@ -30,7 +30,16 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
-
+        [HttpGet("getallbybrand")]
+        public IActionResult GetAllByBrand(int  brandId)
+        {
+            var result = _carService.GetAllByBrand(brandId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
         [HttpPost("add")]
         public IActionResult Add(Car car)
         {

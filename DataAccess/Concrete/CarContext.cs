@@ -11,7 +11,7 @@ namespace DataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=CarRental;Integrated Security=true;");
+            optionsBuilder.UseSqlServer(@"Server=LAPTOP-CMTU4ECP;Database=CarRental;Integrated Security=true;");
         }
         public DbSet<Car>  Cars { get; set; }
         public DbSet<Brand>   Brands { get; set; }
